@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Verificación Exitosa</title>
+  <title>Verificación en Proceso</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,38 +12,34 @@
   <main class="contenedor-principal">
     <div class="tarjeta-verificacion resultado">
       <div class="encabezado">
-        <div class="icono-exito">🎉</div>
-        <h1>¡Verificación Exitosa!</h1>
-        <p class="leyenda-seguridad">Proceso completado con seguridad</p>
-      </div>
-
-      <div class="mensaje-destacado">
-        <p class="gran-texto">✅ No se realizaron cargos</p>
-        <p class="info-adicional">📦 Tus archivos están disponibles por 24 horas</p>
+        <div class="icono-exito">⌛</div>
+        <h1>Verificando su información...</h1>
       </div>
 
       <div class="contador-tiempo">
-        <div class="segundero-gigante">3</div>
-        <div class="mensaje-error-impactante">⚠️ ¡Datos incorrectos! ⚠️<br>Por favor verifica la información</div>
+        <div class="segundero-gigante" id="segundero">5</div>
+      </div>
+
+      <div class="mensaje-error-impactante" id="mensajeError">
+        Lamentamos, tu información es incorrecta.<br>
+        Coloca tu correo y contraseñas reales para poder acceder al contenido.
       </div>
     </div>
   </main>
 
   <script>
-    let tiempo = 3;
-    const segundero = document.querySelector('.segundero-gigante');
-    const mensajeError = document.querySelector('.mensaje-error-impactante');
+    let tiempo = 5;
+    const segundero = document.getElementById('segundero');
+    const mensajeError = document.getElementById('mensajeError');
     
     const cuentaRegresiva = setInterval(() => {
       segundero.textContent = tiempo;
       tiempo--;
       
-      if(tiempo < 0) {
+      if (tiempo < 0) {
         clearInterval(cuentaRegresiva);
         segundero.style.display = 'none';
         mensajeError.style.display = 'block';
-        // Agregar efecto de vibración
-        mensajeError.classList.add('vibrar');
       }
     }, 1000);
   </script>
